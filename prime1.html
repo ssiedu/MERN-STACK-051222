@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script>
+            for(j=1,k=2;k<=10000;k++){
+                n = k;
+                for(i=2; i<n; i++) {
+                    if( (n%i) == 0){
+                        break;
+                    }
+                }
+
+                if(i == n){
+                    document.write(j + ": &nbsp;" +n + "<br>");
+                    j++;
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
