@@ -1,0 +1,157 @@
+<html>
+    <head>
+        <style>
+            #uname_error{
+                color: red;
+            }
+            #pass_error{
+                color: red;
+            }
+            #cpass_error{
+                color: red;
+            }
+            
+        </style>
+        <script>    
+             function formClear(){
+                document.getElementById("uname_error").innerHTML="";
+                document.getElementById("pass_error").innerHTML="";
+                document.getElementById("cpass_error").innerHTML="";
+             }
+             function validate(){
+                username = document.getElementById("username").value;
+                password = document.getElementById("password").value;
+                cpassword = document.getElementById("cpassword").value;
+                
+                username = username.trim();
+                password = password.trim();
+                cpassword = cpassword.trim();
+                formClear();
+
+                if(username == ""){
+                    document.getElementById("uname_error").innerHTML="Please enter username";
+                }
+                else if(username.length<5){
+                    document.getElementById("uname_error").innerHTML="Username less than 5 character";
+                }
+                if(password == ""){
+                    document.getElementById("pass_error").innerHTML="Please enter password";
+                }
+                else if(password.length<5){
+                    document.getElementById("pass_error").innerHTML="Password less than 5 character";
+                }
+                if(cpassword == ""){
+                    document.getElementById("cpass_error").innerHTML="Please enter confirm password";
+                }
+                else if(cpassword.length<5){
+                    document.getElementById("cpass_error").innerHTML="Confirm Password less than 5 character";
+                }
+                
+                
+             }
+             function checkPassword(){
+                password = document.getElementById("password").value;
+                cpassword = document.getElementById("cpassword").value;
+                password = password.trim();
+                cpassword = cpassword.trim();
+                if(password != cpassword){
+                    document.getElementById("cpass_error").innerHTML="Password doesn't match";    
+                }
+             }
+             function valPassword(){
+                password = document.getElementById("password").value;
+                password = password.trim();
+                if(password.length <= 5){
+                    document.getElementById("pass_error").innerHTML="WEAK";    
+                }
+                else{
+                    document.getElementById("pass_error").innerHTML="STRONG";    
+                    document.getElementById("pass_error").style = "color:green";
+                }
+
+             }
+             function showPassword(){
+                document.getElementById("password").type="text" ;
+                document.getElementById("show").style = "hidden:true";
+                document.getElementById("hide").style = "hidden:block";
+             }
+             function hidePassword(){
+                document.getElementById("password").type="password" ;
+                document.getElementById("show").style = "hidden:block";
+                document.getElementById("hide").style = "hidden:true";
+             }
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" id="username" class="username" name="username" maxlength="20"></td>
+                <td id="uname_error"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" onkeypress="valPassword()" id="password" class="password" name="password" maxlength="20"><button id="show" onclick="showPassword()">i</button><button id="hide" onclick="hidePassword()">i</button></td>
+                <td id="pass_error"></td>
+            </tr>
+            <tr>
+                <td>Confirm Password</td>
+                <td><input type="password" onblur="checkPassword()" id="cpassword" class="cpassword" name="cpassword" maxlength="20"></td>
+                <td id="cpass_error"></td>
+            </tr>
+            <tr>
+                <td>Email Id</td>
+                <td><input type="text" id="email" class="email" name="email" maxlength="20"></td>
+                <td id="email_error"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    Male<input type="radio" value="male" id="male" class="gender" name="gender">
+                    FeMale<input type="radio" value="female" id="female" class="gender" name="gender">
+                </td>
+                <td id="gender_error"></td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td>
+                    <select name="state" id="state" class="state">
+                        <option value="">Select State</option>
+                        <option value="mp">Madhya Pradesh</option>
+                        <option value="up">Uttar Pradesh</option>
+                        <option value="rj">Rajasthan</option>
+                        <option value="dl">Delhi</option>
+                        <option value="mh">Maharasta</option>
+                    </select>
+                </td>
+                <td id="state_error"></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>
+                    <select name="city" id="city" class="city">
+                        <option value="">Select City</option>
+                        <option value="indore">Indore</option>
+                        <option value="bhopal">Bhopal</option>
+                        <option value="pune">Pune</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="jaipur">Jaipur</option>
+                    </select>
+                </td>
+                <td id="city_error"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea id="address" cols="20" rows="5" name="address" class="address"></textarea></td>
+                <td id="address_error"></td>
+            </tr>
+            <tr>
+                <td><input type="button" onclick="validate()" value="Registration"></td>
+                <td><input type="reset" value="Reset"></td>
+            </tr>
+        </table>
+       </form>
+    </body>
+</html>
+
+
