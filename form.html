@@ -10,77 +10,29 @@
             #cpass_error{
                 color: red;
             }
-            
+            #state_error{
+                color: red;
+            }
+            #city_error{
+                color: red;
+            }
+            #gender_error{
+                color: red;
+            }
         </style>
-        <script>    
-             function formClear(){
-                document.getElementById("uname_error").innerHTML="";
-                document.getElementById("pass_error").innerHTML="";
-                document.getElementById("cpass_error").innerHTML="";
-             }
-             function validate(){
-                username = document.getElementById("username").value;
-                password = document.getElementById("password").value;
-                cpassword = document.getElementById("cpassword").value;
-                
-                username = username.trim();
-                password = password.trim();
-                cpassword = cpassword.trim();
-                formClear();
-
-                if(username == ""){
-                    document.getElementById("uname_error").innerHTML="Please enter username";
-                }
-                else if(username.length<5){
-                    document.getElementById("uname_error").innerHTML="Username less than 5 character";
-                }
-                if(password == ""){
-                    document.getElementById("pass_error").innerHTML="Please enter password";
-                }
-                else if(password.length<5){
-                    document.getElementById("pass_error").innerHTML="Password less than 5 character";
-                }
-                if(cpassword == ""){
-                    document.getElementById("cpass_error").innerHTML="Please enter confirm password";
-                }
-                else if(cpassword.length<5){
-                    document.getElementById("cpass_error").innerHTML="Confirm Password less than 5 character";
-                }
-                
-                
-             }
-             function checkPassword(){
-                password = document.getElementById("password").value;
-                cpassword = document.getElementById("cpassword").value;
-                password = password.trim();
-                cpassword = cpassword.trim();
-                if(password != cpassword){
-                    document.getElementById("cpass_error").innerHTML="Password doesn't match";    
-                }
-             }
-             function valPassword(){
-                password = document.getElementById("password").value;
-                password = password.trim();
-                if(password.length <= 5){
-                    document.getElementById("pass_error").innerHTML="WEAK";    
-                }
-                else{
-                    document.getElementById("pass_error").innerHTML="STRONG";    
-                    document.getElementById("pass_error").style = "color:green";
-                }
-
-             }
-             function showPassword(){
-                document.getElementById("password").type="text" ;
-                document.getElementById("show").style = "hidden:true";
-                document.getElementById("hide").style = "hidden:block";
-             }
-             function hidePassword(){
-                document.getElementById("password").type="password" ;
-                document.getElementById("show").style = "hidden:block";
-                document.getElementById("hide").style = "hidden:true";
-             }
-        </script>
+        <script src="script.js"></script>   
+        <script>
+            alert("Hello World");
+            x = confirm("Do u want delete");
+            if(x){
+                alert("file delete ");
+            }
+            else{
+                alert("file is not deleted");
+            }
+            y = prompt("Enter your name");
+            alert("Hello "+y);
+        </script> 
     </head>
     <body>
         <table>
@@ -115,7 +67,7 @@
             <tr>
                 <td>State</td>
                 <td>
-                    <select name="state" id="state" class="state">
+                    <select name="state" id="state" class="state" onchange="getCity()">
                         <option value="">Select State</option>
                         <option value="mp">Madhya Pradesh</option>
                         <option value="up">Uttar Pradesh</option>
@@ -131,11 +83,7 @@
                 <td>
                     <select name="city" id="city" class="city">
                         <option value="">Select City</option>
-                        <option value="indore">Indore</option>
-                        <option value="bhopal">Bhopal</option>
-                        <option value="pune">Pune</option>
-                        <option value="mumbai">Mumbai</option>
-                        <option value="jaipur">Jaipur</option>
+                       
                     </select>
                 </td>
                 <td id="city_error"></td>
