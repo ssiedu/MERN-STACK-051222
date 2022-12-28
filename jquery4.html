@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#slideup').click(function(){
+                    $('#message').slideUp();
+                })
+                $('#slidedown').click(function(){
+                    $('#message').slideDown();
+                })
+                $('#slidetoggle').click(function(){
+                    $('#message').slideToggle(4000);
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <button id="slideup">SlideUp</button>
+        <button id="slidedown">SlideDown</button>
+        <button id="slidetoggle">SlideToggle</button>
+        <br><br>
+        <div id="message" style="background-color: burlywood; color:red;">
+                <img src="https://img.freepik.com/free-photo/landscape-shot-beautiful-cholatse-mountains-body-water-khumbu-nepal_181624-24825.jpg?w=996&t=st=1672204768~exp=1672205368~hmac=b24791fa6d58a514eaf4ec1ab02ac7ebecef704e5a910c4d589eca4b8b3f24a2">
+        </div>
+    </body>
+</html>

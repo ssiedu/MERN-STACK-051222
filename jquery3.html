@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#fadein').click(function(){
+                    $('#message').fadeIn();
+                })
+                $('#fadeout').click(function(){
+                    $('#message').fadeOut();
+                })
+                $('#fadetoggle').click(function(){
+                    $('#message').fadeToggle(4000);
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <button id="fadein">FadeIn</button>
+        <button id="fadeout">FadeOut</button>
+        <button id="fadetoggle">FadeToggle</button>
+        <br><br>
+        <div id="message" style="background-color: burlywood; color:red; height: 100px; width: 100px;">
+                Hello World
+        </div>
+    </body>
+</html>
