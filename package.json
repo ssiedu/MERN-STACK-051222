@@ -1,0 +1,18 @@
+{
+  "name": "mernssi",
+  "version": "1.0.0",
+  "description": "This is my first package",
+  "main": "export.js",
+  "scripts": {
+    "test": "node demo.js"
+  },
+  "keywords": [
+    "ssi",
+    "mern"
+  ],
+  "author": "ssi",
+  "license": "ISC",
+  "dependencies": {
+    "MEAN": "^1.0.0"
+  }
+}
